@@ -4,6 +4,29 @@ import Image from "next/image";
 import Link from "next/link";
 import {useState} from "react";
 
+const navLinks = [
+  {
+    number: "00",
+    text: "Home",
+    href: "/",
+  },
+  {
+    number: "01",
+    text: "Destination",
+    href: "/about",
+  },
+  {
+    number: "02",
+    text: "Crew",
+    href: "/contact",
+  },
+  {
+    number: "03",
+    text: "Technology",
+    href: "/contact",
+  },
+];
+
 export function Header() {
   // State to track if the nav menu is open or not
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -84,44 +107,23 @@ export function Header() {
 }
 
 function NavLinks() {
+  return navLinks.map(({href, number, text}) => (
+    <NavLink key={href} href={href} number={number} text={text} />
+  ));
+}
+
+function NavLink({href, number, text}: {href: string; number: string; text: string}) {
   return (
-    <>
-      <Link
-        className="flex items-center border-transparent hover:border-white hover:border-opacity-50 active:border-opacity-100"
-        href="/"
-      >
-        <div className="flex gap-2">
-          <span className="font-barlow_condensed font-bold sm:block md:hidden xl:block">00</span>{" "}
-          Home
-        </div>
-      </Link>
-      <Link
-        className="flex items-center border-transparent hover:border-white hover:border-opacity-50 active:border-opacity-100"
-        href="/about"
-      >
-        <div className="flex gap-2">
-          <span className="font-barlow_condensed font-bold sm:block md:hidden xl:block">01</span>{" "}
-          Destination
-        </div>
-      </Link>
-      <Link
-        className="flex items-center border-transparent hover:border-white hover:border-opacity-50 active:border-opacity-100"
-        href="/contact"
-      >
-        <div className="flex gap-2">
-          <span className="font-barlow_condensed font-bold sm:block md:hidden xl:block">02</span>{" "}
-          Crew
-        </div>
-      </Link>
-      <Link
-        className="flex items-center border-transparent hover:border-white hover:border-opacity-50 active:border-opacity-100"
-        href="/contact"
-      >
-        <div className="flex gap-2">
-          <span className="font-barlow_condensed font-bold sm:block md:hidden xl:block">03</span>{" "}
-          Technology
-        </div>
-      </Link>
-    </>
+    <Link
+      className="flex items-center border-transparent hover:border-white hover:border-opacity-50 active:border-white active:border-opacity-100"
+      href={href}
+    >
+      <div className="flex gap-2">
+        <span className="font-barlow_condensed font-bold sm:block md:hidden xl:block">
+          {number}
+        </span>{" "}
+        {text}
+      </div>
+    </Link>
   );
 }
