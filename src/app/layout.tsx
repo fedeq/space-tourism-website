@@ -17,12 +17,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       className={`${bellefair.variable} ${barlow_condensed.variable} bg-home_desktop bg-cover bg-center bg-no-repeat`}
       lang="en"
     >
-      <body className="grid min-h-screen grid-rows-[auto,1fr,auto]">
+      <body className="grid min-h-screen grid-rows-[auto,1fr]">
         <Header />
         <main className="py-8">{children}</main>
-        <footer className=" text-center leading-[3rem] opacity-70">
-          © {new Date().getFullYear()} space-tourism-website
-        </footer>
       </body>
     </html>
   );

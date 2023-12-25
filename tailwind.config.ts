@@ -6,6 +6,7 @@ const config: Config = {
       fontFamily: {
         bellefair: ["var(--font-bellefair)"],
         barlow_condensed: ["var(--font-barlow-condensed)"],
+        barlow: ["var(--font-barlow)"],
       },
       backgroundImage: {
         home_desktop: "url('/home/background-home-desktop.jpg')",
