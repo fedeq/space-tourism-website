@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className="container mx-auto flex h-full items-end justify-between py-20">
-      <div className="flex">
+      {/* <div className="flex">
         <div>
           <div className="font-barlow_condensed text-[28px] font-normal tracking-[4.72px] text-indigo-200">
             SO, YOU WANT TO TRAVEL TO
@@ -20,7 +20,7 @@ export default function Home() {
             EXPLORE
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
