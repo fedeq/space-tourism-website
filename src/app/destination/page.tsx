@@ -34,7 +34,7 @@ const tabs: Record<Destination, DestinationTab> = {
     estTravelTime: "3 years",
   },
   titan: {
-    destinationName: "Tital",
+    destinationName: "Titan",
     image: "/destination/image-titan.png",
     details: `The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.`,
     avgDistance: "1.6 BIL. km",
@@ -50,7 +50,7 @@ const tabs: Record<Destination, DestinationTab> = {
 };
 
 export default function Destination() {
-  const [destination, setDestination] = useState<Destination>("titan");
+  const [destination, setDestination] = useState<Destination>("moon");
 
   return (
     <div className="xl:bg-destination_desktop bg-destination_mobile sm:bg-destination_tablet grid min-h-screen grid-rows-[auto,1fr] bg-cover bg-center bg-no-repeat">
