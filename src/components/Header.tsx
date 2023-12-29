@@ -13,25 +13,23 @@ const navLinks = [
   {
     number: "01",
     text: "Destination",
-    href: "/about",
+    href: "/destination",
   },
   {
     number: "02",
     text: "Crew",
-    href: "/contact",
+    href: "/crew",
   },
   {
     number: "03",
     text: "Technology",
-    href: "/contact",
+    href: "/technology",
   },
 ];
 
 export function Header() {
-  // State to track if the nav menu is open or not
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  // Function to toggle the nav menu
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };

@@ -10,6 +10,11 @@ const config: Config = {
       },
       backgroundImage: {
         home_desktop: "url('/home/background-home-desktop.jpg')",
+        home_mobile: "url('/home/background-home-mobile.jpg')",
+        home_tablet: "url('/home/background-home-tablet.jpg')",
+        destination_desktop: "url('/destination/background-destination-desktop.jpg')",
+        destination_mobile: "url('/destination/background-destination-mobile.jpg')",
+        destination_tablet: "url('/destination/background-destination-tablet.jpg')",
       },
       textColor: {
         dark_blue: "#0B0D17",

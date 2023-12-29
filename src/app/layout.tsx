@@ -2,8 +2,6 @@ import type {Metadata} from "next";
 
 import "./globals.css";
 
-import {Header} from "@/components/Header";
-
 import {barlow_condensed, bellefair} from "./fonts";
 
 export const metadata: Metadata = {
@@ -13,14 +11,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html
-      className={`${bellefair.variable} ${barlow_condensed.variable} bg-home_desktop bg-cover bg-center bg-no-repeat`}
-      lang="en"
-    >
-      <body className="grid min-h-screen grid-rows-[auto,1fr]">
-        <Header />
-        <main className="py-8">{children}</main>
-      </body>
+    <html className={`${bellefair.variable} ${barlow_condensed.variable} `} lang="en">
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }
