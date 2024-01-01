@@ -15,6 +15,9 @@ const config: Config = {
         destination_desktop: "url('/destination/background-destination-desktop.jpg')",
         destination_mobile: "url('/destination/background-destination-mobile.jpg')",
         destination_tablet: "url('/destination/background-destination-tablet.jpg')",
+        crew_desktop: "url('/crew/background-crew-desktop.jpg')",
+        crew_mobile: "url('/crew/background-crew-mobile.jpg')",
+        crew_tablet: "url('/crew/background-crew-tablet.jpg')",
       },
       textColor: {
         dark_blue: "#0B0D17",
