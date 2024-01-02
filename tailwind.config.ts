@@ -18,6 +18,9 @@ const config: Config = {
         crew_desktop: "url('/crew/background-crew-desktop.jpg')",
         crew_mobile: "url('/crew/background-crew-mobile.jpg')",
         crew_tablet: "url('/crew/background-crew-tablet.jpg')",
+        technology_desktop: "url('/technology/background-technology-desktop.jpg')",
+        technology_mobile: "url('/technology/background-technology-mobile.jpg')",
+        technology_tablet: "url('/technology/background-technology-tablet.jpg')",
       },
       textColor: {
         dark_blue: "#0B0D17",
