@@ -31,7 +31,7 @@ export default function Technology() {
   return (
     <div className="xl:bg-technology_desktop bg-technology_mobile sm:bg-technology_tablet grid min-h-screen grid-rows-[auto,1fr] bg-cover bg-center bg-no-repeat">
       <Header />
-      <main className="xl:pl-36">
+      <main className="pb-6 xl:pl-36">
         <header>
           <h1 className="mb-8 text-center text-base md:my-10 md:ml-12 md:text-left md:text-xl xl:my-5 xl:ml-0 xl:text-[28px]">
             <span className="font-barlow_condensed font-bold tracking-[4.72px] text-white opacity-25">
