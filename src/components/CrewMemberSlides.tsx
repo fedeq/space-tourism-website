@@ -2,7 +2,7 @@
 import {useState} from "react";
 import {useSwipeable} from "react-swipeable";
 
-export const crew = [
+const crew = [
   {
     name: "Douglas Hurley",
     role: "Commander",
