@@ -2,6 +2,7 @@
 import {useState} from "react";
 
 import {Header} from "@/components/Header";
+import { useSwipeable } from "react-swipeable";
 
 const tech = [
   {
@@ -26,6 +27,10 @@ const tech = [
 
 export default function Technology() {
   const [selectedTech, setSelectedTech] = useState(0);
+  const handlers = useSwipeable({
+    onSwipedRight: (eventData) => setSelectedTech((currentTech) => (currentTech - 1 + tech.length) % tech.length),
+    onSwipedLeft: (eventData) => setSelectedTech((currentTech) => (currentTech + 1) % tech.length),
+  });
   const imageUrl = tech[selectedTech].imageLandscape;
 
   return (
@@ -42,28 +47,28 @@ export default function Technology() {
             </span>
           </h1>
         </header>
-        <div className="flex flex-col items-center gap-4 md:gap-10 xl:grid xl:h-[800px] xl:grid-cols-8">
+        <div {...handlers} className="flex flex-col items-center gap-4 md:gap-10 xl:grid xl:h-[800px] xl:grid-cols-8">
           <div
             className="flex h-60 w-full items-center justify-center bg-cover bg-center bg-no-repeat md:h-96 xl:hidden"
             style={{backgroundImage: `url(${imageUrl})`}}
           />
           <nav className="font-bellefair my-6 flex gap-10 text-base md:text-2xl xl:my-0 xl:flex-col">
             <button
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-white hover:bg-indigo-50 hover:text-black active:bg-white active:text-black xl:h-20 xl:w-20"
+              className={`flex h-14 w-14 items-center justify-center rounded-full border border-white hover:bg-indigo-50 hover:text-black xl:h-20 xl:w-20 ${selectedTech == 0 ? 'bg-white text-black' : ''}`}
               type="button"
               onClick={() => setSelectedTech(0)}
             >
               1
             </button>
             <button
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-white hover:bg-indigo-50 hover:text-black active:bg-white active:text-black xl:h-20 xl:w-20"
+              className={`flex h-14 w-14 items-center justify-center rounded-full border border-white hover:bg-indigo-50 hover:text-black xl:h-20 xl:w-20 ${selectedTech == 1 ? 'bg-white text-black' : ''}`}
               type="button"
               onClick={() => setSelectedTech(1)}
             >
               2
             </button>
             <button
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-white hover:bg-indigo-50 hover:text-black active:bg-white active:text-black xl:h-20 xl:w-20"
+              className={`flex h-14 w-14 items-center justify-center rounded-full border border-white hover:bg-indigo-50 hover:text-black xl:h-20 xl:w-20 ${selectedTech == 2 ? 'bg-white text-black' : ''} `}
               type="button"
               onClick={() => setSelectedTech(2)}
             >

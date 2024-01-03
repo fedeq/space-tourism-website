@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import {useState} from "react";
+import { useSwipeable } from "react-swipeable"
 
 import {Header} from "@/components/Header";
 
@@ -35,6 +36,10 @@ const crew = [
 
 export default function Crew() {
   const [crewMember, setCrewMember] = useState(0);
+  const handlers = useSwipeable({
+    onSwipedRight: (eventData) => setCrewMember((currentCrewMemeber) => (currentCrewMemeber - 1 + crew.length) % crew.length),
+    onSwipedLeft: (eventData) => setCrewMember((currentCrewMemeber) => (currentCrewMemeber + 1) % crew.length),
+  });
 
   const crewMemberSelector = (
     <>
@@ -72,7 +77,7 @@ export default function Crew() {
   return (
     <div className="xl:bg-crew_desktop bg-crew_mobile sm:bg-crew_tablet grid min-h-screen grid-rows-[auto,1fr] bg-cover bg-center bg-no-repeat">
       <Header />
-      <main>
+      <main {...handlers}>
         <div className="grid h-full grid-cols-1 gap-10 xl:grid-cols-2 xl:gap-0">
           <div className="flex flex-col items-center text-center text-base md:ml-12 md:mt-10 md:items-start md:text-left md:text-xl xl:ml-36 xl:text-[28px]">
             <div>

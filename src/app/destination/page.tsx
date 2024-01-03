@@ -5,6 +5,7 @@ import Image from "next/image";
 import {useState} from "react";
 
 import {Header} from "@/components/Header";
+import { useSwipeable } from "react-swipeable";
 
 type Destination = "moon" | "europa" | "titan" | "mars";
 
@@ -16,8 +17,8 @@ interface DestinationTab {
   estTravelTime: string;
 }
 
-const tabs: Record<Destination, DestinationTab> = {
-  mars: {
+const tabs: DestinationTab[] = [
+  {
     destinationName: "Mars",
     image: "/destination/image-mars.png",
     details: `Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the
@@ -26,31 +27,35 @@ const tabs: Record<Destination, DestinationTab> = {
     avgDistance: "225 MIL. km",
     estTravelTime: "9 MONTHS",
   },
-  europa: {
+  {
     destinationName: "Europa",
     image: "/destination/image-europa.png",
     details: `The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.`,
     avgDistance: "628 MIL. km",
     estTravelTime: "3 years",
   },
-  titan: {
+  {
     destinationName: "Titan",
     image: "/destination/image-titan.png",
     details: `The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.`,
     avgDistance: "1.6 BIL. km",
     estTravelTime: "7 years",
   },
-  moon: {
+  {
     destinationName: "Moon",
     image: "/destination/image-moon.png",
     details: `See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.`,
     avgDistance: "384,400 km",
     estTravelTime: "3 days",
   },
-};
+];
 
 export default function Destination() {
-  const [destination, setDestination] = useState<Destination>("moon");
+  const [destination, setDestination] = useState(0);
+  const handlers = useSwipeable({
+    onSwipedRight: (eventData) => setDestination((currentDestination) => (currentDestination - 1 + tabs.length) % tabs.length),
+    onSwipedLeft: (eventData) => setDestination((currentDestination) => (currentDestination + 1) % tabs.length),
+  });
 
   return (
     <div className="xl:bg-destination_desktop bg-destination_mobile sm:bg-destination_tablet grid min-h-screen grid-rows-[auto,1fr] bg-cover bg-center bg-no-repeat">
@@ -64,7 +69,7 @@ export default function Destination() {
             Pick your destination
           </span>
         </h1>
-        <div className="grid grid-cols-1 gap-10 pt-10 md:pt-20 xl:grid-cols-2 xl:gap-0">
+        <div {...handlers} className="grid grid-cols-1 gap-10 pt-10 md:pt-20 xl:grid-cols-2 xl:gap-0">
           <div className="mx-auto flex flex-col">
             <Image
               alt="Destination"
@@ -78,45 +83,45 @@ export default function Destination() {
             <div className="flex gap-8">
               <button
                 className={`font-barlow_condensed border-b-4 ${
-                  destination == "moon"
+                  destination == 0
                     ? "border-white text-white"
                     : "border-transparent text-indigo-200"
                 } py-2 text-sm font-normal tracking-[2.70px] hover:border-indigo-200  md:text-base`}
                 type="button"
-                onClick={() => setDestination("moon")}
+                onClick={() => setDestination(0)}
               >
                 MOON
               </button>
               <button
                 className={`font-barlow_condensed border-b-4 ${
-                  destination == "mars"
+                  destination == 1
                     ? "border-white text-white"
                     : "border-transparent text-indigo-200"
                 } py-2 text-sm font-normal tracking-[2.70px] text-indigo-200 hover:border-indigo-200 md:text-base`}
                 type="button"
-                onClick={() => setDestination("mars")}
+                onClick={() => setDestination(1)}
               >
                 MARS
               </button>
               <button
                 className={`font-barlow_condensed border-b-4 ${
-                  destination == "europa"
+                  destination == 2
                     ? "border-white text-white"
                     : "border-transparent text-indigo-200"
                 } py-2 text-sm font-normal tracking-[2.70px] text-indigo-200 hover:border-indigo-200 md:text-base`}
                 type="button"
-                onClick={() => setDestination("europa")}
+                onClick={() => setDestination(2)}
               >
                 EUROPA
               </button>
               <button
                 className={`font-barlow_condensed border-b-4 ${
-                  destination == "titan"
+                  destination == 3
                     ? "border-white text-white"
                     : "border-transparent text-indigo-200"
                 } py-2 text-sm font-normal tracking-[2.70px] text-indigo-200 hover:border-indigo-200 md:text-base`}
                 type="button"
-                onClick={() => setDestination("titan")}
+                onClick={() => setDestination(3)}
               >
                 TITAN
               </button>
