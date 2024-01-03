@@ -1,5 +1,7 @@
 import {Header} from "@/components/Header";
 
+import {ExploreButton} from "../components/ExploreButton";
+
 export default function Home() {
   return (
     <div className="grid min-h-screen grid-rows-[auto,1fr] bg-home_mobile bg-cover bg-center bg-no-repeat sm:bg-home_tablet xl:bg-home_desktop">
@@ -19,11 +21,7 @@ export default function Home() {
               give you a truly out of this world experience!
             </div>
           </div>
-          <div className="mt-16 flex justify-center md:w-1/2">
-            <div className="flex h-[150px] w-[150px] items-center justify-center rounded-full bg-white font-bellefair text-xl font-normal tracking-widest text-gray-950 hover:cursor-pointer hover:ring-[50px] hover:ring-white hover:ring-opacity-20 md:h-[274px] md:w-[274px] md:text-[32px]">
-              EXPLORE
-            </div>
-          </div>
+          <ExploreButton />
         </div>
       </main>
     </div>
