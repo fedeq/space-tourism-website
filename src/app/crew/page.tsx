@@ -74,7 +74,7 @@ export default function Crew() {
       <Header />
       <main>
         <div className="grid h-full grid-cols-1 gap-10 xl:grid-cols-2 xl:gap-0">
-          <div className="mt-5 flex flex-col items-center text-center text-base md:ml-12 md:mt-10 md:items-start md:text-left md:text-xl xl:ml-36 xl:text-[28px]">
+          <div className="flex flex-col items-center text-center text-base md:ml-12 md:mt-10 md:items-start md:text-left md:text-xl xl:ml-36 xl:text-[28px]">
             <div>
               <span className="font-barlow_condensed font-bold tracking-[4.72px] text-white opacity-25">
                 02
@@ -83,18 +83,18 @@ export default function Crew() {
                 Meet your crew
               </span>
             </div>
-            <div className="flex h-[40%] w-[90%] items-end justify-center border-b border-b-gray-700 md:hidden">
+            <div className="mt-8 flex h-[40%] w-[90%] items-end justify-center border-b border-b-gray-700 md:hidden">
               <img alt="Crew" className="mt-10 px-20 md:px-0" src={crew[crewMember].image} />
             </div>
             <div className="flex gap-6 py-5 md:hidden">{crewMemberSelector}</div>
-            <div className="mt-7 flex w-full flex-col items-center justify-center md:mt-14 md:h-[270px] xl:mt-0 xl:h-full xl:items-start">
-              <div className="font-bellefair text-2xl font-normal uppercase text-white opacity-50 xl:text-[32px]">
+            <div className="mt-4 flex w-full flex-col items-center justify-center md:mt-14 md:h-[270px] xl:mt-0 xl:h-full xl:items-start">
+              <div className="font-bellefair text-base font-normal uppercase text-white opacity-50 md:text-2xl xl:text-[32px]">
                 {crew[crewMember].role}
               </div>
-              <div className="font-bellefair mt-4 inline-block font-normal uppercase text-white md:text-[40px] xl:mt-8 xl:text-[56px]">
+              <div className="font-bellefair mt-2 inline-block text-2xl font-normal uppercase text-white md:mt-4 md:text-[40px] xl:mt-8 xl:text-[56px]">
                 {crew[crewMember].name}
               </div>
-              <p className="font-barlow mt-8 px-4 text-center font-thin leading-loose text-indigo-200 md:w-[444px] md:px-0 md:text-base xl:mt-12 xl:text-left xl:text-lg">
+              <p className="font-barlow mt-4 px-4 text-center text-sm font-thin leading-loose text-indigo-200 md:mt-8 md:w-[444px] md:px-0 md:text-base xl:mt-12 xl:text-left xl:text-lg">
                 {crew[crewMember].info}
               </p>
               <div className="hidden md:mt-12 md:flex md:gap-6 xl:mt-20">{crewMemberSelector}</div>
