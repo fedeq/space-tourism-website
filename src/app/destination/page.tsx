@@ -1,6 +1,3 @@
-"use client";
-import {type} from "os";
-
 import {Header} from "@/components/Header";
 import {DestinationTabs} from "@/components/DestinationTabs";
 
