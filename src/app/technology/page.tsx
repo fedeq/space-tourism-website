@@ -49,7 +49,8 @@ export default function Technology() {
         </header>
         <div {...handlers} className="flex flex-col items-center gap-4 md:gap-10 xl:grid xl:h-[800px] xl:grid-cols-8">
           <div
-            className="flex h-60 w-full items-center justify-center bg-cover bg-center bg-no-repeat md:h-96 xl:hidden"
+            key={tech[selectedTech].name}
+            className="flex h-60 w-full items-center justify-center bg-cover bg-center bg-no-repeat md:h-96 xl:hidden animate-fade"
             style={{backgroundImage: `url(${imageUrl})`}}
           />
           <nav className="font-bellefair my-6 flex gap-10 text-base md:text-2xl xl:my-0 xl:flex-col">

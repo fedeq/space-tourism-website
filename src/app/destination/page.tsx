@@ -70,10 +70,11 @@ export default function Destination() {
           </span>
         </h1>
         <div {...handlers} className="grid grid-cols-1 gap-10 pt-10 md:pt-20 xl:grid-cols-2 xl:gap-0">
-          <div className="mx-auto flex flex-col">
+          <div className="mx-auto flex flex-col overflow-hidden">
             <Image
+              key={tabs[destination].destinationName}
               alt="Destination"
-              className="px-20 md:px-0 xl:mt-20"
+              className="px-20 md:px-0 xl:mt-20 animate-fade"
               height={400}
               src={tabs[destination].image}
               width={400}

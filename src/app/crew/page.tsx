@@ -89,7 +89,7 @@ export default function Crew() {
               </span>
             </div>
             <div className="mt-8 flex h-[40%] w-[90%] items-end justify-center border-b border-b-gray-700 md:hidden">
-              <img alt="Crew" className="mt-10 px-20 md:px-0" src={crew[crewMember].image} />
+              <img alt="Crew" className="mt-10 px-20 md:px-0 animate-fade" src={crew[crewMember].image} />
             </div>
             <div className="flex gap-6 py-5 md:hidden">{crewMemberSelector}</div>
             <div className="mt-4 flex w-full flex-col items-center justify-center md:mt-14 md:h-[270px] xl:mt-0 xl:h-full xl:items-start">
@@ -106,7 +106,7 @@ export default function Crew() {
             </div>
           </div>
           <div className="hidden justify-center md:flex">
-            <img alt="Crew" className="mt-10 px-20 md:px-0" src={crew[crewMember].image} />
+            <img key={crew[crewMember].name} alt="Crew" className="mt-10 px-20 md:px-0 animate-fade" src={crew[crewMember].image} />
           </div>
         </div>
       </main>
