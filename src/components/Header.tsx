@@ -4,7 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import {useState} from "react";
 
-const navLinks = [
+import {HamburgerIcon} from "./HamburgerIcon";
+import {CloseIcon} from "./CloseIcon";
+import {NavLinks} from "./NavLinks";
+
+export const navLinks = [
   {
     number: "00",
     text: "Home",
@@ -54,20 +58,7 @@ export function Header() {
           onClick={toggleNav}
         >
           <span className="sr-only">Open main menu</span>
-          <svg
-            className="h-10 w-10"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={1.5}
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <HamburgerIcon />
         </button>
 
         {isNavOpen ? (
@@ -79,16 +70,7 @@ export function Header() {
               onClick={toggleNav}
             >
               <span className="sr-only">Open main menu</span>
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M6 18 18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <CloseIcon />
             </button>
             <NavLinks />
           </ul>
@@ -101,27 +83,5 @@ export function Header() {
         </ul>
       </nav>
     </header>
-  );
-}
-
-function NavLinks() {
-  return navLinks.map(({href, number, text}) => (
-    <NavLink key={href} href={href} number={number} text={text} />
-  ));
-}
-
-function NavLink({href, number, text}: {href: string; number: string; text: string}) {
-  return (
-    <Link
-      className="flex items-center border-transparent hover:border-white hover:border-opacity-50 active:border-white active:border-opacity-100"
-      href={href}
-    >
-      <div className="flex gap-2">
-        <span className="font-barlow_condensed font-bold sm:block md:hidden xl:block">
-          {number}
-        </span>{" "}
-        {text}
-      </div>
-    </Link>
   );
 }
