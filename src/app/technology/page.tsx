@@ -1,27 +1,6 @@
 import {Header} from "@/components/Header";
 import {TechSlides} from "@/components/TechSlides";
 
-export const tech = [
-  {
-    name: "Launch Vehicle",
-    info: `A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!`,
-    imagePortrait: "/technology/image-launch-vehicle-portrait.webp",
-    imageLandscape: "/technology/image-launch-vehicle-landscape.webp",
-  },
-  {
-    name: "Spaceport",
-    info: `A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.`,
-    imagePortrait: "/technology/image-spaceport-portrait.webp",
-    imageLandscape: "/technology/image-spaceport-landscape.webp",
-  },
-  {
-    name: "Space Capsule",
-    info: `A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.`,
-    imagePortrait: "/technology/image-space-capsule-portrait.webp",
-    imageLandscape: "/technology/image-space-capsule-landscape.webp",
-  },
-];
-
 export default function Technology() {
   return (
     <div className="grid min-h-screen grid-rows-[auto,1fr] bg-technology_mobile bg-cover bg-center bg-no-repeat sm:bg-technology_tablet xl:bg-technology_desktop">
